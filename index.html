@@ -1456,30 +1456,52 @@ tr.leaderboard-row:hover {
   }
 
   /* Force table layout to fit the screen without scroll */
-  .table th, .table td {
-    padding: 0.4rem 0.2rem !important;
+  #leaderboard-table {
+    table-layout: fixed !important;
+    width: 100% !important;
+  }
+  
+  #leaderboard-table th, #leaderboard-table td {
+    padding: 0.4rem 0.25rem !important;
     font-size: 0.8rem !important;
   }
   
-  .table th:nth-child(1), .table td:nth-child(1) { /* Rank */
+  #leaderboard-table th:nth-child(1), #leaderboard-table td:nth-child(1) { /* Rank */
     width: 30px !important;
   }
-  .table th:nth-last-child(4), .table td:nth-last-child(4) { /* Gross */
-    width: 65px !important;
-  }
-  .table th:nth-last-child(3), .table td:nth-last-child(3) { /* Handicap */
-    width: 48px !important;
-  }
-  .table th:nth-last-child(2), .table td:nth-last-child(2) { /* Net */
-    width: 52px !important;
-  }
-  .table th:nth-last-child(1), .table td:nth-last-child(1) { /* Detail button */
-    width: 45px !important;
+  
+  #leaderboard-table .rank-badge {
+    width: 22px !important;
+    height: 22px !important;
+    line-height: 22px !important;
+    font-size: 0.8rem !important;
   }
   
-  .table .btn-secondary {
-    padding: 0.25rem 0.4rem !important;
+  #leaderboard-table td:nth-child(2) { /* Name */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  #leaderboard-table th:nth-last-child(4), #leaderboard-table td:nth-last-child(4) { /* Gross */
+    width: 68px !important;
+  }
+  #leaderboard-table th:nth-last-child(3), #leaderboard-table td:nth-last-child(3) { /* Handicap */
+    width: 45px !important;
+  }
+  #leaderboard-table th:nth-last-child(2), #leaderboard-table td:nth-last-child(2) { /* Net */
+    width: 48px !important;
+  }
+  #leaderboard-table th:nth-last-child(1), #leaderboard-table td:nth-last-child(1) { /* Detail button */
+    width: 52px !important;
+  }
+  
+  #leaderboard-table .btn-secondary {
+    padding: 0.25rem 0.35rem !important;
     font-size: 0.75rem !important;
+    width: 100% !important;
+    text-align: center;
+    justify-content: center;
   }
   
   /* Make sure container doesn't overflow horizontally */
@@ -2805,7 +2827,7 @@ function renderLeaderboard() {
     <td class="leaderboard-out-col text-right" style="font-weight: bold;">${outPar}</td>
     ${inParsHTML}
     <td class="leaderboard-in-col text-right" style="font-weight: bold;">${inPar}</td>
-    <td class="text-right" style="font-weight: bold;">${totalPar} <span style="font-size: 0.9rem; font-weight: normal; margin-left: 0.25rem;">(${hiddenParsSum})</span></td>
+    <td class="text-right" style="font-weight: bold;">${totalPar} <span style="font-size: 0.85em; font-weight: normal; margin-left: 0.25rem;">(${hiddenParsSum})</span></td>
     <td class="text-right">-</td>
     <td class="text-right">-</td>
     <td class="text-center"></td>
@@ -2856,7 +2878,7 @@ function renderLeaderboard() {
       <td class="leaderboard-out-col text-right">${player.grossOut}</td>
       ${inHolesHTML}
       <td class="leaderboard-in-col text-right">${player.grossIn}</td>
-      <td class="text-right fw-bold">${player.grossTotal} <span style="font-size: 1rem; color: var(--text-muted); font-weight: normal; margin-left: 0.25rem;">(${player.hiddenHoleAdjustedSum})</span></td>
+      <td class="text-right fw-bold">${player.grossTotal} <span style="font-size: 0.85em; color: var(--text-muted); font-weight: normal; margin-left: 0.25rem;">(${player.hiddenHoleAdjustedSum})</span></td>
       <td class="text-right">${player.handicap.toFixed(1)}</td>
       <td class="text-right fw-bold color-net">${player.netScore.toFixed(1)}</td>
       <td class="text-center">
