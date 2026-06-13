@@ -1349,6 +1349,146 @@ tr.leaderboard-row:hover {
   }
 }
 
+/* --- Additional Mobile Optimization --- */
+
+/* Base hide/show utilities */
+.show-mobile {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  /* Modal Content optimization */
+  .modal-content {
+    padding: 1rem !important;
+    max-height: 95vh !important;
+  }
+  
+  /* Details Modal scorecard: make it a single row of 10 cells */
+  .visual-scorecard-grid {
+    grid-template-columns: repeat(10, 1fr) !important;
+    gap: 0.15rem !important;
+    margin: 1rem 0 !important;
+  }
+  
+  .visual-hole-card {
+    padding: 0.2rem 0.05rem !important;
+    min-width: 0 !important;
+  }
+  
+  .visual-hole-card .hole-num span {
+    font-size: 0.75rem !important;
+  }
+  
+  .visual-hole-card div {
+    font-size: 0.7rem !important;
+  }
+  
+  .score-badge-indicator {
+    width: 25px !important;
+    height: 25px !important;
+    line-height: 23px !important;
+    font-size: 0.85rem !important;
+    margin-top: 0.15rem !important;
+  }
+
+  /* Scorecard inputs editor: split to 2 rows of 10 cells in portrait, 1 row of 20 cells in landscape */
+  @media (orientation: portrait) {
+    .scores-inputs-container {
+      display: grid !important;
+      grid-template-columns: repeat(10, 1fr) !important;
+      gap: 0.15rem !important;
+      overflow-x: visible !important;
+    }
+    .score-input-wrapper {
+      min-width: 0 !important;
+    }
+    .score-input {
+      font-size: 1.1rem !important;
+      padding: 0 !important;
+      height: 32px !important;
+      line-height: 30px !important;
+    }
+    .subtotal-box {
+      height: 32px !important;
+      line-height: 30px !important;
+      font-size: 1.1rem !important;
+      min-width: 0 !important;
+    }
+  }
+
+  @media (orientation: landscape) {
+    .scores-inputs-container {
+      display: grid !important;
+      grid-template-columns: repeat(20, 1fr) !important;
+      gap: 0.15rem !important;
+      overflow-x: visible !important;
+    }
+    .score-input-wrapper {
+      min-width: 0 !important;
+    }
+    .score-input {
+      font-size: 0.95rem !important;
+      padding: 0 !important;
+      height: 28px !important;
+      line-height: 26px !important;
+    }
+    .subtotal-box {
+      height: 28px !important;
+      line-height: 26px !important;
+      font-size: 0.95rem !important;
+      min-width: 0 !important;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .show-mobile {
+    display: inline !important;
+  }
+  .hide-mobile {
+    display: none !important;
+  }
+
+  /* Leaderboard columns hidden on mobile */
+  .leaderboard-out-col,
+  .leaderboard-in-col {
+    display: none !important;
+  }
+
+  /* Force table layout to fit the screen without scroll */
+  .table th, .table td {
+    padding: 0.4rem 0.2rem !important;
+    font-size: 0.8rem !important;
+  }
+  
+  .table th:nth-child(1), .table td:nth-child(1) { /* Rank */
+    width: 30px !important;
+  }
+  .table th:nth-last-child(4), .table td:nth-last-child(4) { /* Gross */
+    width: 65px !important;
+  }
+  .table th:nth-last-child(3), .table td:nth-last-child(3) { /* Handicap */
+    width: 48px !important;
+  }
+  .table th:nth-last-child(2), .table td:nth-last-child(2) { /* Net */
+    width: 52px !important;
+  }
+  .table th:nth-last-child(1), .table td:nth-last-child(1) { /* Detail button */
+    width: 45px !important;
+  }
+  
+  .table .btn-secondary {
+    padding: 0.25rem 0.4rem !important;
+    font-size: 0.75rem !important;
+  }
+  
+  /* Make sure container doesn't overflow horizontally */
+  .card {
+    padding: 1rem !important;
+  }
+}
+
+
 </style>
 </head>
 <body>
@@ -1521,7 +1661,7 @@ tr.leaderboard-row:hover {
                 <th class="leaderboard-hole-col text-center" style="width: 25px;">7</th>
                 <th class="leaderboard-hole-col text-center" style="width: 25px;">8</th>
                 <th class="leaderboard-hole-col text-center" style="width: 25px;">9</th>
-                <th class="text-right" style="width: 60px;">OUT</th>
+                <th class="leaderboard-out-col text-right" style="width: 60px;">OUT</th>
                 <!-- IN course holes -->
                 <th class="leaderboard-hole-col text-center" style="width: 25px;">10</th>
                 <th class="leaderboard-hole-col text-center" style="width: 25px;">11</th>
@@ -1532,11 +1672,11 @@ tr.leaderboard-row:hover {
                 <th class="leaderboard-hole-col text-center" style="width: 25px;">16</th>
                 <th class="leaderboard-hole-col text-center" style="width: 25px;">17</th>
                 <th class="leaderboard-hole-col text-center" style="width: 25px;">18</th>
-                <th class="text-right" style="width: 60px;">IN</th>
-                <th class="text-right" style="width: 100px;">グロス (隠し)</th>
-                <th class="text-right" style="width: 80px;">ハンディ</th>
+                <th class="leaderboard-in-col text-right" style="width: 60px;">IN</th>
+                <th class="text-right" style="width: 100px;"><span class="hide-mobile">グロス (隠し)</span><span class="show-mobile">グロス</span></th>
+                <th class="text-right" style="width: 80px;"><span class="hide-mobile">ハンディ</span><span class="show-mobile">ハンデ</span></th>
                 <th class="text-right color-net fw-bold" style="width: 80px;">ネット</th>
-                <th class="text-center" style="width: 80px;">詳細</th>
+                <th class="text-center" style="width: 80px;"><span class="hide-mobile">詳細</span></th>
               </tr>
             </thead>
             <tbody id="leaderboard-tbody">
@@ -2662,9 +2802,9 @@ function renderLeaderboard() {
     <td class="text-center">-</td>
     <td style="font-weight: bold;">標準 Par</td>
     ${outParsHTML}
-    <td class="text-right" style="font-weight: bold;">${outPar}</td>
+    <td class="leaderboard-out-col text-right" style="font-weight: bold;">${outPar}</td>
     ${inParsHTML}
-    <td class="text-right" style="font-weight: bold;">${inPar}</td>
+    <td class="leaderboard-in-col text-right" style="font-weight: bold;">${inPar}</td>
     <td class="text-right" style="font-weight: bold;">${totalPar} <span style="font-size: 0.9rem; font-weight: normal; margin-left: 0.25rem;">(${hiddenParsSum})</span></td>
     <td class="text-right">-</td>
     <td class="text-right">-</td>
@@ -2713,9 +2853,9 @@ function renderLeaderboard() {
       <td class="text-center">${rankBadgeHTML}</td>
       <td class="fw-bold">${nameHTML}</td>
       ${outHolesHTML}
-      <td class="text-right">${player.grossOut}</td>
+      <td class="leaderboard-out-col text-right">${player.grossOut}</td>
       ${inHolesHTML}
-      <td class="text-right">${player.grossIn}</td>
+      <td class="leaderboard-in-col text-right">${player.grossIn}</td>
       <td class="text-right fw-bold">${player.grossTotal} <span style="font-size: 1rem; color: var(--text-muted); font-weight: normal; margin-left: 0.25rem;">(${player.hiddenHoleAdjustedSum})</span></td>
       <td class="text-right">${player.handicap.toFixed(1)}</td>
       <td class="text-right fw-bold color-net">${player.netScore.toFixed(1)}</td>
