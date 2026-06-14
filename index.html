@@ -1457,7 +1457,7 @@ tr.leaderboard-row:hover {
 
   /* Force table layout to fit the screen without scroll */
   #leaderboard-table {
-    table-layout: fixed !important;
+    table-layout: auto !important;
     width: 100% !important;
   }
   
@@ -1478,9 +1478,10 @@ tr.leaderboard-row:hover {
   }
   
   #leaderboard-table td:nth-child(2) { /* Name */
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: nowrap !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    width: auto !important;
   }
   
   #leaderboard-table th:nth-last-child(4), #leaderboard-table td:nth-last-child(4) { /* Gross */
@@ -2827,7 +2828,7 @@ function renderLeaderboard() {
     <td class="leaderboard-out-col text-right" style="font-weight: bold;">${outPar}</td>
     ${inParsHTML}
     <td class="leaderboard-in-col text-right" style="font-weight: bold;">${inPar}</td>
-    <td class="text-right" style="font-weight: bold;">${totalPar} <span style="font-size: 0.85em; font-weight: normal; margin-left: 0.25rem;">(${hiddenParsSum})</span></td>
+    <td class="text-right" style="font-weight: bold;">${totalPar}</td>
     <td class="text-right">-</td>
     <td class="text-right">-</td>
     <td class="text-center"></td>
@@ -2878,7 +2879,7 @@ function renderLeaderboard() {
       <td class="leaderboard-out-col text-right">${player.grossOut}</td>
       ${inHolesHTML}
       <td class="leaderboard-in-col text-right">${player.grossIn}</td>
-      <td class="text-right fw-bold">${player.grossTotal} <span style="font-size: 0.85em; color: var(--text-muted); font-weight: normal; margin-left: 0.25rem;">(${player.hiddenHoleAdjustedSum})</span></td>
+      <td class="text-right fw-bold">${player.grossTotal}</td>
       <td class="text-right">${player.handicap.toFixed(1)}</td>
       <td class="text-right fw-bold color-net">${player.netScore.toFixed(1)}</td>
       <td class="text-center">
