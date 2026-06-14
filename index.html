@@ -2848,15 +2848,8 @@ function renderLeaderboard() {
       rankBadgeHTML = `<span class="rank-badge rank-badge-other">${player.rank}</span>`;
     }
 
-    // Name with Prize Tag if applicable
+    // Name (Prize tags removed from table rows as requested)
     let nameHTML = escapeHTML(player.name);
-    if (player.prize === 'winner') {
-      nameHTML += ` <span class="prize-tag prize-winner">優勝</span>`;
-    } else if (player.prize === 'booby') {
-      nameHTML += ` <span class="prize-tag prize-booby">BB賞</span>`;
-    } else if (player.prize === 'boobymaker') {
-      nameHTML += ` <span class="prize-tag prize-boobymaker">BM賞</span>`;
-    }
 
     let outHolesHTML = '';
     for (let i = 0; i < 9; i++) {
