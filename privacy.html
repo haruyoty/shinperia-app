@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プライバシーポリシー | 新ぺリアゴルフ計算ツール</title>
+  <style>
+    /* Clean design system variables */
+    :root {
+      --bg-base: hsl(145, 12%, 97%);
+      --bg-surface: #ffffff;
+      --text-main: hsl(145, 20%, 15%);
+      --text-secondary: hsl(145, 12%, 40%);
+      --accent-green: hsl(145, 35%, 28%);
+      --border-color: hsl(145, 15%, 88%);
+      --radius-md: 8px;
+    }
+
+    /* Reset and base styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans JP", sans-serif;
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      line-height: 1.8;
+      padding: 2rem 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* Layout Container */
+    .policy-container {
+      background-color: var(--bg-surface);
+      max-width: 720px;
+      width: 100%;
+      padding: 2.5rem 2rem;
+      border-radius: var(--radius-md);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      border: 1px solid var(--border-color);
+    }
+
+    /* Header styling */
+    header {
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--accent-green);
+      line-height: 1.3;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+
+    /* Paragraphs and list styling */
+    p {
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+      text-align: justify;
+    }
+
+    /* Sections styling */
+    section {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--accent-green);
+      margin-bottom: 0.75rem;
+      border-left: 4px solid var(--accent-green);
+      padding-left: 0.75rem;
+    }
+
+    /* Contact details box */
+    .contact-box {
+      background-color: var(--bg-base);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .contact-line {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .contact-line:last-child {
+      margin-bottom: 0;
+    }
+
+    .contact-label {
+      font-weight: 700;
+      width: 150px;
+      color: var(--text-main);
+    }
+
+    .contact-value {
+      color: var(--text-secondary);
+    }
+
+    .contact-value a {
+      color: var(--accent-green);
+      text-decoration: none;
+      border-bottom: 1px dashed var(--accent-green);
+    }
+
+    .contact-value a:hover {
+      color: hsl(145, 35%, 20%);
+      border-bottom-style: solid;
+    }
+
+    /* Footer / Date styling */
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding-top: 1.5rem;
+      margin-top: 2.5rem;
+      display: flex;
+      justify-content: flex-end;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    /* Mobile responsive overrides */
+    @media (max-width: 576px) {
+      body {
+        padding: 1rem 0.5rem;
+      }
+
+      .policy-container {
+        padding: 1.75rem 1.25rem;
+        box-shadow: none;
+        border-radius: 6px;
+      }
+
+      h1 {
+        font-size: 1.45rem;
+      }
+
+      h2 {
+        font-size: 1.05rem;
+      }
+
+      p, .contact-line {
+        font-size: 0.9rem;
+      }
+
+      .contact-label {
+        width: 100%;
+        margin-bottom: 0.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="policy-container">
+    <header>
+      <h1>プライバシーポリシー</h1>
+      <div class="subtitle">新ぺリアゴルフ計算ツール</div>
+    </header>
+
+    <p>新ぺリアゴルフ計算ツール（以下、「本アプリ」といいます）は、利用者のプライバシーを尊重し、個人情報の保護に努めます。本アプリのプライバシーポリシーは以下の通りです。</p>
+
+    <section>
+      <h2>1. 個人情報の収集および利用について</h2>
+      <p>本アプリは、利用者の氏名、メールアドレス、電話番号、位置情報、スコアデータ、その他いかなる個人情報も収集、蓄積、または外部サーバーへ送信することはありません。本アプリに入力されたすべてのデータは、利用者の端末内のローカルストレージ（LocalStorage）にのみ一時的に保存され、アプリの機能提供（リアルタイムの計算および順位表示）の目的にのみ使用されます。</p>
+    </section>
+
+    <section>
+      <h2>2. データの管理と削除について</h2>
+      <p>本アプリに入力されたスコアやプレイヤー情報は、インターネットを経由して外部に送信されることはありません。利用者がアプリ内のクリア機能を使用するか、またはブラウザ/端末のキャッシュやストレージデータをクリアすることにより、端末内からデータを完全に消去することができます。</p>
+    </section>
+
+    <section>
+      <h2>3. 第三者への情報提供について</h2>
+      <p>本アプリは利用者のデータを一切収集しないため、第三者に個人情報を提供、開示、または共有することは一切ありません。</p>
+    </section>
+
+    <section>
+      <h2>4. 広告およびアナリティクス（アクセス解析）について</h2>
+      <p>本アプリは、広告配信プラットフォームやアクセス解析ツール（Google Analytics等）によるユーザー情報の追跡およびデータ収集を行っていません。</p>
+    </section>
+
+    <section>
+      <h2>5. 免責事項</h2>
+      <p>本アプリが提供する計算結果（新ぺリア方式によるハンディキャップおよびネットスコア算出）については細心の注意を払って開発されていますが、その正確性や妥当性を恒久的に保証するものではありません。本アプリの利用により生じた直接的・間接的なトラブル、損失、または損害について、開発者は一切の責任を負いません。公式競技等での使用の際は、事前にルールの適合性をご自身でご確認ください。</p>
+    </section>
+
+    <section>
+      <h2>6. プライバシーポリシーの改定</h2>
+      <p>今後、本アプリのアップデートに伴い、データ処理や規約に変更が生じる場合は、本プライバシーポリシーを速やかに改定いたします。</p>
+    </section>
+
+    <section>
+      <h2>7. お問い合わせ</h2>
+      <p>本アプリに関するお問い合わせ、ご意見がございましたら、以下の連絡先までご連絡ください。</p>
+      
+      <div class="contact-box">
+        <div class="contact-line">
+          <span class="contact-label">連絡先（メールアドレス）</span>
+          <span class="contact-value"><a href="mailto:yoshiharu.noyama@gmail.com">yoshiharu.noyama@gmail.com</a></span>
+        </div>
+        <div class="contact-line">
+          <span class="contact-label">開発者/組織名</span>
+          <span class="contact-value">野山佳治</span>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      策定日： 2026年6月21日
+    </footer>
+  </div>
+
+</body>
+</html>
