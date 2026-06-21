@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>サポートページ | ゴルフ新ペリア計算ツール</title>
+  <style>
+    /* Clean design system variables */
+    :root {
+      --bg-base: hsl(145, 12%, 97%);
+      --bg-surface: #ffffff;
+      --text-main: hsl(145, 20%, 15%);
+      --text-secondary: hsl(145, 12%, 40%);
+      --accent-green: hsl(145, 35%, 28%);
+      --border-color: hsl(145, 15%, 88%);
+      --radius-md: 8px;
+    }
+
+    /* Reset and base styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans JP", sans-serif;
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      line-height: 1.8;
+      padding: 2rem 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* Layout Container */
+    .support-container {
+      background-color: var(--bg-surface);
+      max-width: 600px;
+      width: 100%;
+      padding: 2.5rem 2rem;
+      border-radius: var(--radius-md);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      border: 1px solid var(--border-color);
+      text-align: center;
+    }
+
+    /* Header styling */
+    header {
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--accent-green);
+      line-height: 1.4;
+    }
+
+    /* Content styling */
+    p {
+      margin-bottom: 2rem;
+      font-size: 1rem;
+      color: var(--text-main);
+    }
+
+    /* Contact Details Card */
+    .contact-card {
+      background-color: var(--bg-base);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 2.5rem 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .icon-wrapper {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .email-link {
+      display: inline-block;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--accent-green);
+      text-decoration: none;
+      border-bottom: 2px dashed var(--accent-green);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .email-link:hover {
+      color: hsl(145, 35%, 20%);
+      border-bottom-style: solid;
+    }
+
+    /* Footer styling */
+    footer {
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+
+    /* Mobile responsive overrides */
+    @media (max-width: 576px) {
+      body {
+        padding: 1rem 0.5rem;
+      }
+
+      .support-container {
+        padding: 2rem 1.25rem;
+        box-shadow: none;
+        border-radius: 6px;
+      }
+
+      h1 {
+        font-size: 1.35rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .contact-card {
+        padding: 1.5rem 1rem;
+      }
+
+      .email-link {
+        font-size: 1.05rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="support-container">
+    <header>
+      <h1>ゴルフ新ペリア計算ツール<br>サポートページ</h1>
+    </header>
+
+    <p>本アプリに関するお問い合わせやご意見は、<br>以下のメールアドレスまでお願いいたします。</p>
+
+    <div class="contact-card">
+      <div class="icon-wrapper">✉️</div>
+      <a href="mailto:yoshiharu.noyama@gmail.com" class="email-link">yoshiharu.noyama@gmail.com</a>
+    </div>
+
+    <footer>
+      &copy; 2026 野山佳治. All Rights Reserved.
+    </footer>
+  </div>
+
+</body>
+</html>
